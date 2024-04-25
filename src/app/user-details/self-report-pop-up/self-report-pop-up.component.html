@@ -1,0 +1,45 @@
+<div class="self-report">  
+    <div class="self-report-header">
+        <h5 class="self-report-heading"><b>Self Report Details</b></h5>
+        <button type="button" class="self-report-close" aria-label="Close" [mat-dialog-close]="true">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <hr>
+    <div class="self-report-body">
+        <form>
+        <div class="self-report-category">
+            <label for="category">Category</label>
+            <select class="form-control" (input)="onCategoryChange($event)" required>
+                <option *ngFor="let category of generateCategories" [value]="category">{{ category }}</option>
+            </select>
+        </div>
+        <div class="self-report-date">
+            <label for="date">Date</label>
+            <div class="self-report-datepicker">
+                <mat-form-field class="custom-datepicker">
+                    <input matInput [matDatepicker]="picker" class="custom-datepicker-input">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker" class="custom-datepicker-toggle"></mat-datepicker-toggle>
+                    <mat-datepicker #picker class="custom-mat-datepicker"></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="self-report-description">
+            <label for="description">Description</label>
+            <textarea (input)="onDescriptionChange($event)" maxlength="350"></textarea>
+        </div>
+        <div class="self-report-weightage">
+            <label for="weightage">Weightage</label>
+            <div class="self-report-progress-bar">
+                <div class="self-report-progress" [style.width]="self_weightage + '%'">
+                  <span class="self-report-progress-value">{{self_weightage}}%</span>
+                </div>
+            </div>
+        </div>
+        <div class="self-report-button" align="right">
+            <button type="button" class="self-report-cancel" (click)="onCancelClick()">Cancel</button>&nbsp;
+            <button type="button" class="self-report-submit" (click)="onSaveClick()">Save</button>
+        </div>
+        </form>
+    </div>
+</div>

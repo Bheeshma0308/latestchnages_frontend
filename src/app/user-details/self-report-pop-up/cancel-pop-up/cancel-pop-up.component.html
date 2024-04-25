@@ -1,0 +1,9 @@
+<div  class="cancel-pop-up-container">
+    <div class="cancel-pop-up-header" align="center">
+        <p>Are you sure you want to discard the changes?</p>
+    </div>
+    <div class="cancel-pop-up-button" align='center'>
+        <button type="button" class="cancel-pop-up-no" [mat-dialog-close]="true" >No</button>&nbsp;
+        <button type="button" class="cancel-pop-up-yes" (click)="onCloseAll()"> Yes</button>
+    </div>
+</div>

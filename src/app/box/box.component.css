@@ -1,0 +1,63 @@
+.container {
+  display: flex !important;
+  align-items: center !important;
+  /* height: 30vh; */
+  margin: 15px auto; 
+  padding: 10px 0; 
+  flex-wrap: nowrap; 
+  width: calc(100% - 120px); 
+  max-width: 1350px; 
+  overflow-x: auto; 
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-right: 10px; 
+}
+
+.box {
+  background-color: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 230px; 
+  height: 100px; 
+  margin: 10px 5px; 
+  position: relative;
+}
+
+.text-left {
+  text-align: left;
+  font-size: 18px; 
+  color: blue;
+  line-height: 16px; 
+  height: 12px;
+}
+
+.badges {
+  font-size: 14px; 
+  line-height: 20px; 
+}
+
+.trophy-icon {
+  font-size: 36px; 
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: transparent;
+}
+
+.slider {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.level {
+  color: white;
+  font-size: 23px; 
+  line-height: 40px; 
+}
+
+.level b {
+  font-weight: bold;
+}

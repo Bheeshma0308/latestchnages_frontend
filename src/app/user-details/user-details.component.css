@@ -1,0 +1,42 @@
+.user-details-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; 
+  margin-left: 60px; 
+  margin-right: 60px; 
+  border-radius: 5px;
+  background: linear-gradient(to right, #326D62, #0E5291, #0E034F);
+  height: 75px;
+  width: calc(100% - 185px); 
+  z-index: 900; 
+}
+
+.user-detail {
+  margin: 14px;
+}
+
+.user-detail p {
+  margin: 4px; 
+  color: white;
+}
+
+.self-report-button-container {
+  margin: 0;
+  margin-right: 10px; 
+  align-self: center; 
+}
+
+.self-report-button {
+  width: 128px;
+  height: 36px;
+  background-color: #0155B8;
+  border-color: #0155B8;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}

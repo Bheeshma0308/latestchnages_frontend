@@ -1,0 +1,40 @@
+.save-pop-up-container{
+    width: 400px;
+    height:90px;
+}
+ 
+.save-pop-up-header{
+    margin: 10px;
+}
+ 
+.save-pop-up-header p{
+    font-size: 16px;
+}
+ 
+.save-pop-up-button{
+    margin-top: 20px;
+}
+ 
+.save-pop-up-no{
+    background-color: white;
+    color: #007bff;
+    border-color: #007bff;
+    width: 71px;
+    height: 36px;
+    top: 588px;
+    left: 733px;
+    border-radius: 4px;
+    border: 1px solid;
+}
+ 
+.save-pop-up-yes{
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    width: 71px;
+    height: 36px;
+    top: 588px;
+    left: 733px;
+    border-radius: 4px;
+    border: 1px solid;
+}

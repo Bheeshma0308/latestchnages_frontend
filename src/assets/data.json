@@ -1,0 +1,46 @@
+{
+    "all":[
+        { "col1": "1. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "2. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "3. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "4. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "5. John Robinson", "col2": "Angular", "col3": "30.0"  }
+    ],
+    "interviews":[
+      {"col1": "1. John", "col2": "Java", "col3": "30.0" },
+      { "col1": "2. Alice", "col2": "Python", "col3": "25.5" },
+      { "col1": "3. Bob", "col2": "JavaScript", "col3": "35.2" },
+      { "col1": "4. Eve", "col2": "C#", "col3": "28.8" },
+      { "col1": "5. Alice", "col2": "Python", "col3": "25.5" }
+    ],
+    "techtalks":[
+        { "col1": "1. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "2. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "3. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "4. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "5. John Robinson", "col2": "Angular", "col3": "30.0"  }
+ 
+    ],
+    "rfps":[
+      {"col1": "1. John", "col2": "Java", "col3": "30.0" },
+      { "col1": "2. Alice", "col2": "Python", "col3": "25.5" },
+      { "col1": "3. Bob", "col2": "JavaScript", "col3": "35.2" },
+      { "col1": "4. Eve", "col2": "C#", "col3": "28.8" },
+      { "col1": "5. Alice", "col2": "Python", "col3": "25.5" }
+    ],
+    "whitepapers":[
+        { "col1": "1. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "2. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "3. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "4. John Robinson", "col2": "Angular", "col3": "30.0"  },
+        { "col1": "5. John Robinson", "col2": "Angular", "col3": "30.0"  }
+    ],
+    "casestudies":[
+        {"col1": "1. John", "col2": "Java", "col3": "30.0" },
+        { "col1": "2. Alice", "col2": "Python", "col3": "25.5" },
+        { "col1": "3. Bob", "col2": "JavaScript", "col3": "35.2" },
+        { "col1": "4. Eve", "col2": "C#", "col3": "28.8" },
+        { "col1": "5. Alice", "col2": "Python", "col3": "25.5" }
+ 
+    ]
+}

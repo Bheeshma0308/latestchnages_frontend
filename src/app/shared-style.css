@@ -1,0 +1,39 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+  }
+  
+  /* UserDetails Styles */
+  user-details {
+    margin-top: 20px;
+  }
+  
+  /* Box Styles */
+  app-box {
+    margin-top: 20px;
+  }
+  
+  /* KPI-Weights Styles */
+  app-kpi-weights {
+    margin-top: 20px;
+  }
+  
+  /* Top Scorer Styles */
+  app-top-scorer {
+    margin-top: 20px;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+  }
+  
