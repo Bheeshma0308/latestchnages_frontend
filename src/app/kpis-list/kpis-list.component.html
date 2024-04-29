@@ -1,48 +1,4 @@
-<!-- <div *ngIf="showAddSuccessMessage" class="success-message">
-  KPI added successfully!
-</div>
-<div *ngIf="showDeleteSuccessMessage" class="success-message">
-  KPI deleted successfully!
-</div>
-<div *ngIf="showUpdateSuccessMessage" class="success-message">
-  KPI updated successfully!
-</div>
- <div class="kpi-page">
-  <div class="search-div">
-    <img class="arrow" src="assets\arrow.png"><span class="kpi-title">KPIs</span>
-    <input class="search-bar" type="text" placeholder="Search KPI" >
-    <button class="add-button" type="submit" (click)="openDialog()">Add KPI</button>
-    
-  </div>
-   
-<div class="tabdiv" *ngIf="tableData.length > 0">
-  <table class="tableData">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of tableData">
-        <td><img class="kpi-image" src="assets\kpi-image.png">{{ item.name }}</td>
-        <td>{{ item.description }}</td>
-        <td>
-          <button (click)="editItem()">Edit</button>
-          <button (click)="deleteItem()">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
 
-</div>
-  </div>  -->
-
-
-
-  
     
     <div *ngIf="showAddSuccessMessage" class="success-message" >
       <img class="right-symbol" src="assets\kpi right-symbol.png">
@@ -78,11 +34,11 @@
     <div *ngIf="noResultsFound" class="no-results-message">
       No Results Found 
     </div>
-    <div class="search-suggestions" *ngIf="searchSuggestions.length > 0">
+    <!-- <div class="search-suggestions" *ngIf="searchSuggestions.length > 0">
       <div *ngFor="let suggestion of searchSuggestions" (click)="selectSuggestion(suggestion)">
         {{ suggestion }}
       </div>
-    </div>
+    </div> -->
 
   </div>
   
@@ -134,58 +90,7 @@
     </div>
     
     </div>
-    <!-- <div *ngIf="selectedRowData" class="selected-row-data">
-      <h3>Selected Row Data</h3>
-      <p><strong>Name:</strong> {{ selectedRowData.name }}</p>
-      <p><strong>Description:</strong> {{ selectedRowData.description }}</p>
-      
-    </div> -->
-
-
     
-     <!-- <div class="tabdiv" *ngIf="tableData.length > 0">
-      <table class="tableData">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <ng-container *ngFor="let item of tableData; let i = index">
-            <tr >
-              <td>
-                <img class="kpi-image" src="assets\kpi-image.png">
-                <span *ngIf="!item.editing; else nameEditMode">{{ item.name }}</span>
-                <ng-template #nameEditMode>
-                  <input type="text" [(ngModel)]="item.name" />
-                </ng-template>
-              </td>
-              <td>
-                <span *ngIf="!item.editing; else descriptionEditMode">{{ item.description }}</span>
-                <ng-template #descriptionEditMode>
-                  <input type="text" [(ngModel)]="item.description" />
-                </ng-template>
-              </td>
-              <td>
-                <ng-container *ngIf="!item.editing; else saveMode">
-                  <button class="edit-button" (click)="editItem(i)">Edit</button>
-                  <button class="delete-button" (click)="openDeleteConfirmation()">Delete</button>
-                </ng-container>
-                <ng-template #saveMode>
-              
-                  <button (click)="saveItem(i)">Save</button>
-                  
-                </ng-template>
-              </td>
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
-    </div>
-  </div>  -->
-
  
 
   

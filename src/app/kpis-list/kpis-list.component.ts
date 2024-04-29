@@ -24,7 +24,7 @@ export class KpisListComponent {
   editingItemId: number | null = null;
    filteredData: Kpi[] = [];
    searchTerm:string = '';
-   searchSuggestions: string[] = [];
+   //searchSuggestions: string[] = [];
    showResultsMessage: boolean = false;
   noResultsFound: boolean = false;
 
@@ -182,9 +182,9 @@ export class KpisListComponent {
       this.showResultsMessage = false;
       this.noResultsFound = false;
     } else {
-      const searchTermLC = this.searchTerm.toLowerCase();
+      //const searchTermLC = this.searchTerm.toLowerCase();
       this.filteredData = this.tableData.filter(item =>
-        item.name.toLowerCase().includes(searchTermLC));
+        item.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
   
       if (this.filteredData.length > 0) {
         this.showResultsMessage = true;
@@ -193,21 +193,21 @@ export class KpisListComponent {
         this.showResultsMessage = false;
         this.noResultsFound = true;
       }
-      const suggestions = this.tableData
-      .filter(item => item.name.toLowerCase().startsWith(searchTermLC))
-      .map(item => item.name);
+    //   const suggestions = this.tableData
+    //   .filter(item => item.name.toLowerCase().startsWith(searchTermLC))
+    //   .map(item => item.name);
 
-    this.updateSuggestions(suggestions);
+    // this.updateSuggestions(suggestions);
     }
     
   }
-  updateSuggestions(suggestions: string[]): void {
-    this.searchSuggestions = suggestions;
-  }
-  selectSuggestion(suggestion: string): void {
-    this.searchTerm = suggestion;
-    this.filterData();
-  }
+  // updateSuggestions(suggestions: string[]): void {
+  //   this.searchSuggestions = suggestions;
+  // }
+  // selectSuggestion(suggestion: string): void {
+  //   this.searchTerm = suggestion;
+  //   this.filterData();
+  // }
 
   adminPage(){
     this.router.navigate(['first-page-admin']);
