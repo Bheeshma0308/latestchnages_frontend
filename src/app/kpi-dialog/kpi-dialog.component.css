@@ -1,0 +1,65 @@
+h2{
+  font-size: 16px;
+  font-style:roboto;
+  font-weight: 500px;
+    border: 2px solid #D9D9D9
+}
+.error-icon {
+    color: black; 
+    
+    margin-left: 80%;
+     
+  }
+  .input-container {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600px;
+    
+   
+  
+    
+  }
+  
+  .input-field {
+    width: 100%; 
+    
+  }
+  
+  
+  .dailog-name {
+    width: 640px; 
+    font-size: 16px;
+    padding-left:10px;
+    height: 40px;
+    border-radius: 4px ;
+    border: 2px solid #D9D9D9;
+    
+
+  }
+ .dailog-description{
+    width: 625px;
+    font-size: 16px;
+   
+    height: 62px;
+    border-radius: 4px ;
+    border: 2px solid #D9D9D9;
+   
+    
+
+ }
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end; 
+  }
+  
+  .dialog-actions button {
+    margin-left: 8px; 
+  }
+ 
+  .save-button:active,
+  .save-button:focus,
+  .save-button:hover {
+    background-color: #125699; 
+    color:white;
+  }
+  

@@ -1,0 +1,33 @@
+.footer{
+    position: fixed;
+    width: 100%;
+    height: 30px;
+   bottom: 0px;
+    gap: 0px;
+    opacity: 0px;
+    background: #F9F9F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.container{
+    position: fixed;
+    width: 296px;
+height: 9.29px;
+left: 534px;
+padding-bottom: 20px;
+
+}
+ 
+p{
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 11.22px;
+    font-weight: 400;
+    line-height: 13.15px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #808080;
+    
+}
