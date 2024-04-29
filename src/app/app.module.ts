@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -17,6 +16,8 @@ import { KpiDialogComponent } from './kpi-dialog/kpi-dialog.component';
 import { DeleteDailogComponent } from './delete-dailog/delete-dailog.component';
 import { FooterComponent } from './footer/footer.component';
 import { FirstPageAdminComponent } from './first-page-admin/first-page-admin.component';
+import { TopAchieversComponent } from './top-achievers/top-achievers.component';
+import { AllTopAchieversComponent } from './all-top-achievers/all-top-achievers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { FirstPageAdminComponent } from './first-page-admin/first-page-admin.com
     DeleteDailogComponent,
     FooterComponent,
     FirstPageAdminComponent,
-    
+    TopAchieversComponent,
+    AllTopAchieversComponent
   ],
   imports: [
     BrowserModule,
