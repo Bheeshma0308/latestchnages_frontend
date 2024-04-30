@@ -51,6 +51,9 @@ label{
     height: 45px;
 }
  
+::ng-deep .mdc-line-ripple::before{
+    display: none;
+}
 .self-report-category option{
     padding: 5px;
 }

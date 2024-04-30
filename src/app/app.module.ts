@@ -41,6 +41,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { KpiWeightsComponent } from './kpi-weights/kpi-weights.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 import { TopScorerComponent } from './top-scorer/top-scorer.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -54,6 +55,7 @@ import { HttpClientModule } from '@angular/common/http';
     DeleteDailogComponent,
     FooterComponent,
     FirstPageAdminComponent,
+    LoginPageComponent,
     TopAchieversComponent,
     AllTopAchieversComponent
   ],
