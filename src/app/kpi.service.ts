@@ -11,20 +11,17 @@ export class KpiService {
   private apiUrl = 'assets/kpi.json';
 
   constructor(private http: HttpClient) { }
+  
   getData(): Observable<Kpi[]> {
     return this.http.get<Kpi[]>(this.apiUrl)
-  
-
-      .pipe(
+        .pipe(
         catchError(error => {
           console.error('Error fetching data:', error);
           throw throwError(error); // You can handle errors as needed
         })
       );
   }
-  // saveData(data: Kpi[]): Observable<void> {
-  //   return this.http.put<void>(this.apiUrl, data);
-  // }
+
   saveData(kpis: Kpi[]): Observable<void> {
     return this.http.put<void>(this.apiUrl, kpis)
       .pipe(
@@ -44,6 +41,5 @@ export class KpiService {
           return throwError(error);
         })
       );
-  }
-  
+  }  
 }

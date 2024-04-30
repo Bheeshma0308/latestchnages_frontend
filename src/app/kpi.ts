@@ -1,5 +1,5 @@
 export interface Kpi {
-    name: string;
+  name: string;
   description: string;
   editing?: boolean;
 }
