@@ -5,12 +5,14 @@ import { BoxComponent } from './box/box.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { SelfReportPopUpComponent } from './user-details/self-report-pop-up/self-report-pop-up.component';
 import { SavePopUpComponent } from './user-details/self-report-pop-up/save-pop-up/save-pop-up.component';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
-import { ReactiveFormsModule } from '@angular/forms';
 import { CancelPopUpComponent } from './user-details/self-report-pop-up/cancel-pop-up/cancel-pop-up.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
+import { KpiWeightsComponent } from './kpi-weights/kpi-weights.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { TopScorerComponent } from './top-scorer/top-scorer.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { KpisListComponent } from './kpis-list/kpis-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -57,7 +59,14 @@ import { HttpClientModule } from '@angular/common/http';
     FirstPageAdminComponent,
     LoginPageComponent,
     TopAchieversComponent,
-    AllTopAchieversComponent
+    AllTopAchieversComponent,
+    AdminDashboardComponent,
+    KpisListComponent,
+    KpiDialogComponent,
+    FirstPageAdminComponent,
+    TopAchieversComponent,
+    DeleteDailogComponent,
+    AllTopAchieversComponent,
   ],
   imports: [
     BrowserModule,
