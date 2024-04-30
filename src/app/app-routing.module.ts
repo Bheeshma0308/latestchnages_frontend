@@ -8,7 +8,6 @@ import {TopAchieversComponent} from './top-achievers/top-achievers.component';
 const routes: Routes = [
   {path:'kpi-list',component:KpisListComponent},
   {path:'first-page-admin',component:FirstPageAdminComponent},
- //  {path: '',redirectTo: 'kpi-list', pathMatch:'full'}
   {path:'top_performer', component: TopAchieversComponent},
   {path:'home', component: AllTopAchieversComponent},
   {path:'', redirectTo:'home', pathMatch:'full'}

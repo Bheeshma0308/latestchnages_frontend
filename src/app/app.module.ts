@@ -10,6 +10,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule} from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { KpiDialogComponent } from './kpi-dialog/kpi-dialog.component';
@@ -18,6 +20,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FirstPageAdminComponent } from './first-page-admin/first-page-admin.component';
 import { TopAchieversComponent } from './top-achievers/top-achievers.component';
 import { AllTopAchieversComponent } from './all-top-achievers/all-top-achievers.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,11 +41,15 @@ import { AllTopAchieversComponent } from './all-top-achievers/all-top-achievers.
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    CommonModule,
     ReactiveFormsModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatTableModule,
+    MatSelectModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

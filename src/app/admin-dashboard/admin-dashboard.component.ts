@@ -12,11 +12,11 @@ export class  AdminDashboardComponent{
   user_level:string = 'Junior Software Engineer';
   user_sub_competency:string = 'OpenSource';
  
-  //constructor(private dialogRef : MatDialog,private router: Router){}
+  //constructor(private router: Router){}
 
 
   KpiData(){
-    //this.router.navigate(['kpi-list']);
+   // this.router.navigate(['kpi-list']);
   }
 
 }

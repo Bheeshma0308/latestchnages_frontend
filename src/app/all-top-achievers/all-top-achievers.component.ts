@@ -48,6 +48,9 @@ export class AllTopAchieversComponent {
       this.startKPIIndex++;
     }
   }
+  openKPIPage() {
+    this.router.navigate(['kpi-list']);
+  }
 
   // previous(): void {
   //   if (this.startIndex > 0) {
