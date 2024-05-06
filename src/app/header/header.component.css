@@ -1,148 +1,38 @@
 .header-container{
-    position: relative;
     width: 100%;
-    height: 60px;
-    left: -0.47px;
-    gap: 0px;
-    opacity: 0px;
+    height: max-content;
     background-color: #0B38A1;
-}
- 
-.label{
-    position: absolute;
-    width: 154px;
-    height: 36px;
-    top: 6px;
-    left: 106.65px;
-    padding: 10px 0px 0px 0px;
-    gap: 10px;
-    border-radius: 5px;
-    border: 0.5px solid #3D64BE;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0px 0px 4.6px 0px #4768B6;
-    margin-bottom: 20px;
-}
-p{
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 0.25px;
-    text-align: center;
-    color:#FFFFFF;
     
 }
 
-.employee-dashboard{
-    position: absolute;
-    width: 100%;
-    height: 34.78px;
-    top: 60px;
-    gap: 0px;
-    opacity: 0px;
-    background-color: #F4F6F9;
-}    
- .home-icon{
-   
-width: 25px;
-height: 25px;
-gap: 0px;
-opacity: 0px;
-margin-left: 20px;
-margin-top: 3px;
-
-
- }
-.label2{
-    position: absolute;
-    top:25%;
-   
+.flex-box {
     display: flex;
-    width: 126px;
-    height: 15px;
-    left: 53.25px;
-    gap: 0px;
-    opacity: 0px;
+    align-items: center;
+    column-gap: 10px;
 }
- 
 
- 
-span{
-    margin-left: 20%;
-    font-family: Inter;
-    font-size: 12.64px;
-    font-weight: 400;
-    line-height: 15.3px;
-    text-align: left;
-    color: #6E6E6E;
- 
-}  
- 
+.company-logo {
+    height: 25px;
+    margin: 18px;
+}
 
- 
-.line{
-    position: absolute;
-    top:5%;
-    height: 65%;
-    left: 4%;
+.project-label {
+    padding:10px;
+    border: 0.5px solid #3D64BE;
+    box-shadow: 0px 0px 4.6px 0px #4768B6;
+    border-radius: 5px;
+    font: 16px Inter 600;
+    line-height: 16px;
+    color: white;
+    height: 36px;
+}
+
+.page-title-container {
+    background: #F4F6F9;
+    padding: 6px;
+}
+
+.seperator {
+    height: 18px;
     border: 1px solid #6E6E6E;
-   margin-top: 5px;
 }
- 
-
- 
-.innova-logo{
-    position: absolute;
-    width: 68.9px;
-    height: 22.59px;
-    top: 18.24px;
-    left: 18.81px;
-    gap: 0px;
-    opacity: 0px;
-}
- 
-.innova-logo img{
-    width: 100%;
-    height: auto;
-}
- 
-a{
-    text-decoration-line: none;
-}
-
-.name-ellipse {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.name-ellipse {
-    position: absolute;
-    right: 50px; 
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.shape-image {
-    position: absolute;
-    right: 25px; 
-    top: 50%;
-    transform: translateY(-50%);
-    width: 15px; 
-    height: auto; 
-}
-
