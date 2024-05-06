@@ -1,22 +1,16 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-//import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Location } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
-export class  AdminDashboardComponent{
-  user_name :string = 'Harsil';
-  user_level:string = 'Junior Software Engineer';
-  user_sub_competency:string = 'OpenSource';
- 
-  //constructor(private router: Router){}
+export class AdminDashboardComponent {
+  @Input()
+  role: string;
 
-
-  KpiData(){
-   // this.router.navigate(['kpi-list']);
+  constructor(private location: Location) {
+    this.role = (this.location.getState() as {role: string}).role;
   }
-
 }

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { KpiDialogComponent } from '../kpi-dialog/kpi-dialog.component';
 import { Router } from '@angular/router';
 import { KpiService } from '../kpi.service';
 import { Kpi } from '../kpi';
 import { DeleteDailogComponent } from '../delete-dailog/delete-dailog.component';
+import { Location } from '@angular/common';
 
 
 
@@ -16,7 +17,9 @@ import { DeleteDailogComponent } from '../delete-dailog/delete-dailog.component'
 })
 export class KpisListComponent {
   
-  
+  @Input()
+  role: string;
+
   tableData: Kpi[] = [];
   showDeleteSuccessMessage = false;
   showAddSuccessMessage = false;
@@ -28,7 +31,9 @@ export class KpisListComponent {
    showResultsMessage: boolean = false;
   noResultsFound: boolean = false;
 
-  constructor(private router: Router,private KpiService: KpiService,public dialog:MatDialog) { }
+  constructor(private router: Router,private KpiService: KpiService,public dialog:MatDialog, private location: Location) {
+    this.role = (this.location.getState() as {role: string}).role;
+  }
   
 // Handle dialog close event if needed
   ngOnInit(): void {

@@ -1,5 +1,6 @@
-<app-admin-dashboard></app-admin-dashboard>
-    
+<app-header [pageTitle]=" role.concat(' Dashboard')"></app-header>
+  
+<user-details [role]="role"></user-details>
     <div *ngIf="showAddSuccessMessage" class="success-message" >
       <img class="right-symbol" src="assets\kpi right-symbol.png">
       KPI added successfully!
@@ -91,7 +92,7 @@
     
     </div>
     
- 
+ <app-footer></app-footer>
 
   
    

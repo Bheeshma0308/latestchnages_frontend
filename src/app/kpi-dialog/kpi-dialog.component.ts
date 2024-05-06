@@ -1,7 +1,8 @@
-import { Component,Inject,OnInit } from '@angular/core';
+import { Component,Inject,Input,OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Kpi } from '../kpi';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -11,14 +12,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class KpiDialogComponent implements OnInit{
   kpiForm: FormGroup;
+  @Input()
+  role: string;
   constructor(
     public dialogRef: MatDialogRef<KpiDialogComponent>,
     private formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: Kpi
-  ) { this.kpiForm = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.maxLength(20)]],
-    description: ['', [Validators.maxLength(200)]]
-  });}
+    @Inject(MAT_DIALOG_DATA) public data: Kpi,
+    private location: Location
+  ) { 
+    this.kpiForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.maxLength(20)]],
+      description: ['', [Validators.maxLength(200)]]
+    });
+    this.role = (this.location.getState() as {role: string}).role;
+  }
 
   ngOnInit(): void {
     

@@ -5,16 +5,16 @@
         <p>{{user_level +' - '+ user_sub_competency}}</p>
       </div>
       <div class="action-container" *ngIf="role == 'Employee'">
-        <button class="self-report-button" (click)="openPopUp()">+ Self Report</button>
+        <button class="action-button" (click)="openPopUp()">+ Self Report</button>
       </div>
       <div class="action-container" *ngIf="role== 'Admin'">
-        <button class="view-badges-button">
+        <button class="action-button ">
             View Badges
         </button>&nbsp;
-        <button class="view-kpis-button" (click)="openKPIPage()">
+        <button class="action-button " (click)="openKPIPage()">
             View KPIs
         </button>&nbsp;
-        <button class="view-success-button">
+        <button class="action-button ">
             View Success Criteria
         </button>
     </div>
