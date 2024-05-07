@@ -44,7 +44,7 @@ export class SuccessCriteriaComponent implements OnInit {
   }
 
   navigateCoe(){
-    this.router.navigate(['COE']);
+    this.router.navigate(['success-COE']);
   }
   addNewCriteria() {
     this.showNewRow = true;

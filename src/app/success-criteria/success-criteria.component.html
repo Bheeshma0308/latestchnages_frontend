@@ -1,7 +1,9 @@
+<app-header [pageTitle]="'Success Criteria'"></app-header>
+<user-details ></user-details>
 <div *ngIf="showDeleteSuccessMessage" class="success-message">
     <img class="wrong-symbol"src="assets/images/check_circle.svg">
      Deleted successfully!
-     <img class="delete-symbol" src="assets/images/close.svg">
+     <img class="delete-symbol" src="assets/close.svg">
 </div>
 <div class="container-header">
     <div class="heading">
@@ -91,3 +93,4 @@
         </mat-expansion-panel> 
     </mat-accordion>    
 </div>
+<app-footer></app-footer>
