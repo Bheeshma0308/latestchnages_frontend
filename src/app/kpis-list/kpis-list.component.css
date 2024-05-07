@@ -130,7 +130,7 @@ table{
 .tabdiv thead th{
   position:sticky;
   top:0px;
-  z-index: 1;
+  /* z-index: 1; */
 }
 th{
    
@@ -180,9 +180,9 @@ th{
     padding-bottom: 100px;
   }    */
   .success-message{
-    width: 226.22px;
+    width: 16%;
     height: 24px;
-    padding: 9px 12px 9px 12px;
+    padding: 9px 12px 25px 12px;
     border-radius: 5px ;
     text-align: center;
     color:#24AD00;
@@ -251,10 +251,10 @@ th{
  
   }
  
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .search-div {
     flex-direction: row;
-    /* align-items: stretch; */
+    align-items: stretch;
   }
  
   .tabdiv {
@@ -263,4 +263,4 @@ th{
   }
  
  
-}
+} */
