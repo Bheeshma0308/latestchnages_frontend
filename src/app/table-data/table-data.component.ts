@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DeleteDailogComponent } from './delete-dailog/delete-dailog.component';
+import { DeleteDailogComponent } from '../delete-dailog/delete-dailog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
