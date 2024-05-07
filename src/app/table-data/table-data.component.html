@@ -1,0 +1,73 @@
+
+
+<div class="line"></div>
+    <div class="error" *ngIf="!isTotalWeightageValid()">
+        Total Weightage should be 100%
+     </div>
+
+     <div class="table-container">
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>KPI</th>
+                    <th>Success Criteria</th>
+                    <th>Weightage</th>
+                    <th *ngIf="!showNewRow">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let element of tableData">
+                    <td *ngIf="!element.editMode" class="kpi-row">
+                        <img class="img2" src="assets/images/demography.svg" alt="Icon"> {{ element.Kpi }}
+                    </td>
+                    <td *ngIf="element.editMode">
+                        <img class="img2" src="assets/images/demography.svg" alt="Icon"> 
+                        <select [(ngModel)]="element.Kpi">
+                        <option *ngFor="let option of kpiOptions" [ngValue]="option" [selected]="option === element.Kpi">{{ option }}</option>
+                        </select>
+                    </td>
+                    <td *ngIf="!element.editMode">{{ element.success }}</td>
+                        <td *ngIf="element.editMode">
+                            <input type="text" [(ngModel)]="element.success">
+                        </td>
+                        <td *ngIf="!element.editMode">{{ element.weightage }}%</td>
+                        <td *ngIf="element.editMode">
+                            <input type="text" [(ngModel)]="element.weightage">
+                        </td>
+                        <td *ngIf="!showNewRow && !element.editMode">
+                        <button class="btn" (click)="enableEditMode(element)">Edit</button>
+                        <!-- <button class="btn" (click)="openDeleteDialog(element)">Delete</button> -->
+                        </td>
+                            
+                        <td *ngIf="element.editMode">
+                        <button class="btn" (click)="saveEditedCriteria(element)">Save</button>
+                        <button class="btn" (click)="cancelEdit(element)">Cancel</button>
+                        </td>
+                </tr>
+                <tr *ngIf="showNewRow">
+                    <td>
+                        <img class="img2" src="assets/images/demography.svg" alt="Icon">
+                        <select [(ngModel)]="newKpi">
+                        <option value="" disabled selected>KPI</option>
+                        <option value="Interviews">Interviews</option>
+                        <option value="White Papers">White Papers</option>
+                        <option value="Tech Talks">Tech Talks</option>
+                        <option value="RFPs">RFPs</option>
+                        <option value="Case studies">Case studies</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="newSuccess" placeholder="Enter Success Criteria">
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="newWeightage" placeholder="Enter Weightage">
+                    </td>
+                    <td>
+                        <button class="btn" (click)="saveNewCriteria()">Save</button>
+                        <button class="btn" (click)="cancelAdd()">Cancel</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn add" (click)="addNewCriteria()"> + Add Success Criteria</button>
+    </div>

@@ -1,0 +1,88 @@
+.btn {
+    background: #0155B8;
+    color: #ffffff;
+    border-radius: 4px 4px 4px 4px;
+    opacity: 0px;
+    margin-right: 10px;
+    left: 10px;
+}
+
+.line {
+    border: 1px solid #D9D9D9;
+    width: auto;
+    margin-top: 10px; 
+    margin-left: 0px; 
+    border: 1px 0px 0px 0px;
+}
+
+.error {
+    color:#FF0000;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 5px; /* Adjusted from top position */
+    margin-left: 36px; /* Adjusted from left position */
+}
+
+.table1 {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.table1 th,
+.table1 td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #EDF5FB;
+}
+
+
+.table1 tr {
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.table1 tr:last-child {
+    border-bottom: none;
+
+}
+
+th:nth-child(1), td:nth-child(1) {    
+    width: 20%; 
+}
+
+th:nth-child(2), td:nth-child(2) {   
+    width: 30%; 
+}
+
+th:nth-child(3), td:nth-child(3) {   
+    width: 20%; 
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 30%;    
+}
+
+.success-message{
+    display: flex;
+    text-align: center; 
+    align-items: center;
+    width: 226.22px;
+    height: 30px;
+    padding: 9px 12px 9px 12px;
+    border-radius: 5px ;
+    text-align: center;
+    color:#24AD00;
+    background: #BDFFB2;
+    border: 0.5px solid #24AD00;
+    position:absolute;
+    top:10%;
+    z-index: 1;
+    
+}
