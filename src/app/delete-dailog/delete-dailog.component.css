@@ -23,9 +23,9 @@ margin: 0;
     color:#0155B8;
     border: 1px solid #0155B8;
     background-color: white;
-    padding: 6px 16px 6px 16px;
-    border-radius: 4px ;
-    font-size: 13px;
+    /* padding: 6px 16px 6px 16px; */
+    /* border-radius: 4px ;
+    font-size: 13px; */
 
   }
  
@@ -34,5 +34,5 @@ margin: 0;
   .deletebutton:hover {
     background-color: #0155B8; 
     color:white;
-    padding: 6px 16px 6px 16px;
+    /* padding: 6px 16px 6px 16px; */
   }
