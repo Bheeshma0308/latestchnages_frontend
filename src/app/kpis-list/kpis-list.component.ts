@@ -19,7 +19,6 @@ export class KpisListComponent {
   
   @Input()
   role: string;
-
   tableData: Kpi[] = [];
   showDeleteSuccessMessage = false;
   showAddSuccessMessage = false;
@@ -27,15 +26,18 @@ export class KpisListComponent {
   editingItemId: number | null = null;
    filteredData: Kpi[] = [];
    searchTerm:string = '';
-   //searchSuggestions: string[] = [];
+   searchSuggestions: string[] = [];
    showResultsMessage: boolean = false;
   noResultsFound: boolean = false;
+  suggestionClicked: boolean = false;
+
+  
 
   constructor(private router: Router,private KpiService: KpiService,public dialog:MatDialog, private location: Location) {
     this.role = (this.location.getState() as {role: string}).role;
   }
   
-// Handle dialog close event if needed
+
   ngOnInit(): void {
     this.loadData();
     
@@ -72,13 +74,13 @@ export class KpisListComponent {
     const dialogRef = this.dialog.open(KpiDialogComponent, {
       width: '710px',
       height: '405px',
-      data: {} as Kpi // Initialize an empty Kpi object
+      data: {} as Kpi 
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.filteredData.push(result);
-        //this.saveDataAndUpdateMessage('KPI added successfully');
+        
         this.showAddSuccessMessage = true;
         this.showDeleteSuccessMessage=false;
         this.showUpdateSuccessMessage=false; 
@@ -89,26 +91,12 @@ export class KpisListComponent {
   openDeleteConfirmation(index:number): void {
     const dialogRef = this.dialog.open(DeleteDailogComponent, {
       width: '300px',
-      height:'160px', // Set dialog width as desired
-      data: {} as Kpi// You can pass data to the dialog if needed
+      height:'160px', 
+      data: {} as Kpi
       
     });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     if (result === true) {
-  //       // User clicked Delete
-  //       this.deleteItem(); 
-
-  //       this.showDeleteSuccessMessage = true;
-        
-        
-  //       // Call your deleteItem function here
-  //     } else {
-  //       // User clicked Cancel or closed the dialog
-  //       // Handle accordingly (e.g., do nothing)
-  //     }
-  //   });
-  // }
+  
   dialogRef.afterClosed().subscribe(result => {
     if (result === true) {
       this.deleteItem(index)
@@ -127,7 +115,7 @@ export class KpisListComponent {
 
 
   editItem(index: number): void {
-    // Set editing flag to true for the selected item
+    
     this.tableData[index].editing = true;
    
 
@@ -135,7 +123,7 @@ export class KpisListComponent {
 
   
   saveEdit(index: number): void {
-    // Set editing flag to false for the selected item
+    
     this.tableData[index].editing = false;
     this.showUpdateSuccessMessage = true;
     this.showAddSuccessMessage=false;
@@ -145,14 +133,14 @@ export class KpisListComponent {
       .subscribe(() => {
         console.log('Data saved successfully');
         this.showUpdateSuccessMessage = true;
-        // Show update confirmation message
+        
         alert('Updated successfully');
       });
   }
 
 
   cancelEdit(index: number): void {
-    // Reset the editing state of the item at the specified index
+    
     this.filteredData[index].editing = false;
     this.showUpdateSuccessMessage = false;
   }
@@ -162,11 +150,8 @@ export class KpisListComponent {
     if (index >= 0 && index < this.filteredData.length) {
       const itemToDelete = this.filteredData[index];
   
-      // Implement your delete logic here (e.g., delete from backend, update UI)
-      // For demonstration, let's remove the item locally from arrays
       const itemIndexInTableData = this.tableData.findIndex(item => item === itemToDelete);
       if (itemIndexInTableData !== -1) {
-        // Remove item from tableData array
         this.tableData.splice(itemIndexInTableData, 1);
       }
   
@@ -181,41 +166,55 @@ export class KpisListComponent {
   }
   
   filterData(): void {
-    
     if (this.searchTerm.trim() === '') {
-      this.filteredData = [...this.tableData]; // Reset to show all data
+      this.filteredData = [...this.tableData];
       this.showResultsMessage = false;
       this.noResultsFound = false;
+      this.searchSuggestions = [];
+      this.resetSearch();
     } else {
-      //const searchTermLC = this.searchTerm.toLowerCase();
-      this.filteredData = this.tableData.filter(item =>
-        item.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
-  
-      if (this.filteredData.length > 0) {
+     
+      const searchTermLC = this.searchTerm.toLowerCase();
+      const suggestions = this.tableData
+        .filter(item => item.name.toLowerCase().startsWith(searchTermLC))
+        .map(item => item.name);
+      this.updateSuggestions(suggestions);
+      if (this.searchSuggestions.length > 0) {
         this.showResultsMessage = true;
         this.noResultsFound = false;
-      } else {
+    } else {
         this.showResultsMessage = false;
         this.noResultsFound = true;
-      }
-    //   const suggestions = this.tableData
-    //   .filter(item => item.name.toLowerCase().startsWith(searchTermLC))
-    //   .map(item => item.name);
-
-    // this.updateSuggestions(suggestions);
     }
-    
-  }
-  // updateSuggestions(suggestions: string[]): void {
-  //   this.searchSuggestions = suggestions;
-  // }
-  // selectSuggestion(suggestion: string): void {
-  //   this.searchTerm = suggestion;
-  //   this.filterData();
-  // }
-
-  adminPage(){
-    this.router.navigate(['first-page-admin']);
-  }
+    }
+}
+ 
+updateSuggestions(suggestions: string[]): void {
+    this.searchSuggestions = suggestions;
+}
+ 
+selectSuggestion(suggestion: string): void {
+    this.searchTerm = suggestion;
+    const searchTermLC = this.searchTerm.toLowerCase();
+    this.filteredData = this.tableData.filter(item =>
+        item.name.toLowerCase().includes(searchTermLC)
+       
+    );
+    this.searchTerm = '';
+    this.suggestionClicked = true;
+   
+   
+}
+resetSearch(): void {
+  this.searchTerm = '';
+  this.searchSuggestions = [];
+  this.suggestionClicked = false;
+}
+ 
+ 
+ 
+   adminPage(){
+    //  this.router.navigate(['first-page-admin']);
+   }
 
 }
