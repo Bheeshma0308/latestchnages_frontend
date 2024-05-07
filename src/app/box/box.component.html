@@ -1,13 +1,13 @@
-<div class="col-md-4">
-  <div class="container">
-    <div *ngFor="let box of visibleBoxes" class="box" [style.background-color]="box.color">
-      <div class="text-left">{{ box.name }}</div>
-      <div class="trophy-icon" [style.background-color]="box.color">
-        <img [src]="box.image" alt="Trophy Icon">
-      </div>
-      <div class="level">{{ box.level }}</div>
-      <div class="badges">{{ box.badges }} more required to level <b>{{ box.nextLevel }}</b></div>
+<div class="container">
+  <div *ngFor="let box of visibleBoxes" class="box" [style.background-color]="box.color">
+    <div class="kpi-name">{{ box.name }}</div>
+    <div class="trophy-icon" [style.background-color]="box.color">
+      <img [src]="box.image" alt="Trophy Icon">
     </div>
+    <div class="level">{{ box.level }}</div>
+    <div class="badges">{{ box.badges }} more required to level <b>{{ box.nextLevel }}</b></div>
+  </div>
+  <div class="slider-wrapper">
     <img src="assets/arrow_forward_ios.png" class="slider" (click)="slide()">
   </div>
 </div>

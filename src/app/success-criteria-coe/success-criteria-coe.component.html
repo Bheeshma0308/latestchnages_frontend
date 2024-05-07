@@ -1,6 +1,6 @@
 <div class="container-header"> 
     <div class="heading">
-        <img class="arrow" src="assets/images/arrow_back.svg">
+        <img class="arrow" src="assets/arrow_back.svg">
         <h3>Success Criteria</h3> 
         <div class="search-bar">
             <input type="search" placeholder="Search Sub-Competency" [(ngModel)]="searchTerm" (input)="filterCOEs()" >
@@ -15,9 +15,9 @@
     </div>
 
     <div class="coe-container" *ngFor="let coe of filteredCOEs">
-        <img class="icon" src="assets/images/manage_accounts.svg"> 
+        <img class="icon" src="assets/manage_accounts.svg"> 
         <p>{{ coe }}</p>
-        <a style="cursor: pointer;"><img class="icon1" src="assets/images/expand.svg" (click)="navigateSuccess(coe)"></a>
+        <a style="cursor: pointer;"><img class="icon1" src="assets/expand.svg" (click)="navigateSuccess(coe)"></a>
     </div> 
 </div>
 

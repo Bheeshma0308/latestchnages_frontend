@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DeleteDailogComponent } from './delete-dailog/delete-dailog.component';
+import { DeleteDailogComponent } from '../delete-dailog/delete-dailog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -11,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class TableDataComponent {
   @Input() tableData: any;
 
-  initialData: any[] = []; // Store the initial data from data.json
+  initialData: any[] = []; 
 
   newKpi: string = '';
   newSuccess: string = '';
@@ -58,15 +58,13 @@ export class TableDataComponent {
       weightage: this.newWeightage
     };
 
-    // Update the tableData array with the new criteria
+  
     this.tableData.push(newData);
 
-    // Optionally, save the updated data to localStorage
     localStorage.setItem('criteriaData', JSON.stringify(this.tableData));
 
     console.log('New criteria added:', newData);
 
-    // Reset the form
     this.resetForm();
   }
 

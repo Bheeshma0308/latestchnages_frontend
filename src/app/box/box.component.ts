@@ -33,7 +33,7 @@ export class BoxComponent {
   visibleBoxes: Box[] = [];
 
   currentIndex = 0;
-  boxesPerPage = 6;
+  boxesPerPage = 10;
 
   ngOnInit() {
     this.updateVisibleBoxes();
