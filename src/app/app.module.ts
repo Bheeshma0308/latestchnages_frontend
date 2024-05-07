@@ -40,6 +40,7 @@ import { SuccessCriteriaCoeComponent } from './success-criteria-coe/success-crit
 import { SuccessCriteriaComponent } from './success-criteria/success-criteria.component';
 import { TableDataComponent } from './table-data/table-data.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { TableDataComponent } from './table-data/table-data.component';
     SuccessCriteriaCoeComponent,
     SuccessCriteriaComponent,
     TableDataComponent,
+
   ],
   imports: [
     BrowserModule,

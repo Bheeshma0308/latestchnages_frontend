@@ -1,20 +1,22 @@
+<app-header [pageTitle]="'Success Criteria'"></app-header>
+<user-details ></user-details>
 <div *ngIf="showDeleteSuccessMessage" class="success-message">
     <img class="wrong-symbol"src="assets/images/check_circle.svg">
      Deleted successfully!
-     <img class="delete-symbol" src="assets/images/close.svg">
+     <img class="delete-symbol" src="assets/close.svg">
 </div>
 <div class="container-header">
     <div class="heading">
-    <a (click)="navigateCoe()" style="cursor: pointer; "> <img class="arrow" src="assets/images/arrow_back.svg"></a>
+    <a (click)="navigateCoe()" style="cursor: pointer; "> <img class="arrow" src="assets/arrow_back.svg"></a>
     <h3>{{ coe }}</h3>
     </div>
     <mat-accordion>
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 2</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header> 
             <app-table-data [tableData]="tableData" (delete)="openDeleteDialog($event)"></app-table-data>
@@ -22,9 +24,9 @@
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 3</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <app-table-data [tableData]="tableData"></app-table-data>
@@ -32,9 +34,9 @@
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 4</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <app-table-data [tableData]="tableData"></app-table-data>
@@ -42,9 +44,9 @@
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 5</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <app-table-data [tableData]="tableData"></app-table-data>
@@ -52,9 +54,9 @@
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 6</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <app-table-data [tableData]="tableData"></app-table-data>
@@ -62,9 +64,9 @@
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 7</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <app-table-data [tableData]="tableData"></app-table-data>
@@ -72,9 +74,9 @@
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 8</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <app-table-data [tableData]="tableData"></app-table-data>
@@ -82,12 +84,13 @@
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                <img class="icon1" src="assets/images/family_history.svg">
+                <img class="icon1" src="assets/family_history.svg">
                 <span>Level 9</span>
-                <img class="icon2" src="assets/images/expand_more.svg">
+                <img class="icon2" src="assets/expand_more.svg">
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <app-table-data [tableData]="tableData"></app-table-data>
         </mat-expansion-panel> 
     </mat-accordion>    
 </div>
+<app-footer></app-footer>

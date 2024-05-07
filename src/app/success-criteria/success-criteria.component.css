@@ -1,7 +1,7 @@
 .container-header {
     display: flex;
     flex-direction: column;
-    position: relative;
+    column-gap: 10px;
     width: auto; 
     height: auto;
     padding: 10px;
@@ -9,22 +9,22 @@
     margin-right: 2%;
     border-radius: 5px;
     background: #ffffff;
-    max-height: 438px; 
+    max-height: 638px; 
     overflow-y: auto;
-    top: 30%;
+    top: calc(100% -120px);
 }
 
 .heading {
     display: flex;
-    align-items: center; 
-    padding: 5px;
+    align-items: center;
+    column-gap: 10px;
     margin-bottom: 1%;
 }
 
 .arrow {
     width: 20px;
     height: 20px; 
-    margin-right: 10px;
+
 }
 
 h3 {
@@ -39,10 +39,11 @@ h3 {
 .mat-accordion {
     display: flex; 
     flex-direction: column; 
+    column-gap: 10px;
     height: 5%;
-    margin-left: 1%;
+    margin: 5px;
     border-radius: 4px ;
-    border: 1px 0px 0px 0px;
+    border: 1px ;
 }
 
 .mat-expansion-panel {
@@ -59,8 +60,7 @@ h3 {
 .icon2 {
     width: 12px;
     height: 7.4px;
-    margin-top: 20px; 
-    margin-left: auto; 
+
 }
 
 span {

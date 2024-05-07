@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './success-criteria.component.html',
   styleUrls: ['./success-criteria.component.css']
 })
-export class SuccessCriteriaComponent {
+export class SuccessCriteriaComponent implements OnInit {
   tableData: any[] = [];
   initialData: any[] = []; 
   newKpi: string = '';
@@ -38,13 +38,13 @@ export class SuccessCriteriaComponent {
 
   fetchData(category: string) {
     this.http.get<any[]>('./assets/data.json').subscribe(data => {
-      this.initialData = data; // Save the initial data
-      this.tableData = [...this.initialData]; // Initialize tableData with initial data
+      this.initialData = data; 
+      this.tableData = [...this.initialData]; 
     });
   }
 
   navigateCoe(){
-    this.router.navigate(['COE']);
+    this.router.navigate(['success-COE']);
   }
   addNewCriteria() {
     this.showNewRow = true;

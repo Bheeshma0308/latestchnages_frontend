@@ -18,10 +18,10 @@
             <tbody>
                 <tr *ngFor="let element of tableData">
                     <td *ngIf="!element.editMode" class="kpi-row">
-                        <img class="img2" src="assets/images/demography.svg" alt="Icon"> {{ element.Kpi }}
+                        <img class="img2" src="assets/demography.svg" alt="Icon"> {{ element.Kpi }}
                     </td>
                     <td *ngIf="element.editMode">
-                        <img class="img2" src="assets/images/demography.svg" alt="Icon"> 
+                        <img class="img2" src="assets/demography.svg" alt="Icon"> 
                         <select [(ngModel)]="element.Kpi">
                         <option *ngFor="let option of kpiOptions" [ngValue]="option" [selected]="option === element.Kpi">{{ option }}</option>
                         </select>
@@ -36,7 +36,7 @@
                         </td>
                         <td *ngIf="!showNewRow && !element.editMode">
                         <button class="btn" (click)="enableEditMode(element)">Edit</button>
-                        <!-- <button class="btn" (click)="openDeleteDialog(element)">Delete</button> -->
+                        <button class="btn" (click)="openDeleteDialog(element)">Delete</button> 
                         </td>
                             
                         <td *ngIf="element.editMode">
@@ -46,7 +46,7 @@
                 </tr>
                 <tr *ngIf="showNewRow">
                     <td>
-                        <img class="img2" src="assets/images/demography.svg" alt="Icon">
+                        <img class="img2" src="assets/demography.svg" alt="Icon">
                         <select [(ngModel)]="newKpi">
                         <option value="" disabled selected>KPI</option>
                         <option value="Interviews">Interviews</option>
