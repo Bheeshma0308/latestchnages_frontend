@@ -50,7 +50,15 @@ h2{
   .dialog-actions button {
     margin-left: 8px; 
   }
- 
+  .cancel-button:focus{
+    color:#0155B8;
+    border: 1px solid #0155B8;
+    background-color: white;
+    padding: 6px 16px 6px 16px;
+    border-radius: 4px ;
+    font-size: 13px;
+
+  }
   .save-button:active,
   .save-button:focus,
   .save-button:hover {

@@ -73,7 +73,7 @@ export class KpisListComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(KpiDialogComponent, {
       width: '710px',
-      height: '405px',
+      height: '420px',
       data: {} as Kpi 
     });
 
@@ -91,7 +91,7 @@ export class KpisListComponent {
   openDeleteConfirmation(index:number): void {
     const dialogRef = this.dialog.open(DeleteDailogComponent, {
       width: '300px',
-      height:'160px', 
+      height:'200px', 
       data: {} as Kpi
       
     });
@@ -214,7 +214,7 @@ resetSearch(): void {
  
  
    adminPage(){
-    //  this.router.navigate(['first-page-admin']);
+      this.router.navigate(['admin-dashboard']);
    }
 
 }

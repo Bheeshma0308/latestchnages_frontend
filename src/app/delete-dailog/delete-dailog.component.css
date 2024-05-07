@@ -9,35 +9,30 @@ margin: 0;
 
 }
 
-
-
-
-
-
 .dialog-actions {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: center; 
   }
   
   .dialog-actions button {
-    margin-left: 8px; /* Add spacing between buttons */
+     margin-left: 8px;  
+    display: flex;
+    
   }
   .cancelbutton:focus{
     color:#0155B8;
     border: 1px solid #0155B8;
+    background-color: white;
     padding: 6px 16px 6px 16px;
-    gap: 4px;
     border-radius: 4px ;
-    opacity: 0px;
     font-size: 13px;
 
-    
   }
  
   .deletebutton:active,
   .deletebutton:focus,
   .deletebutton:hover {
     background-color: #0155B8; 
-    color:white;/* Change background color when button is clicked or hovered */
+    color:white;
     padding: 6px 16px 6px 16px;
   }
