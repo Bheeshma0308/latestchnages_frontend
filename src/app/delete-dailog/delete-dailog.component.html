@@ -3,7 +3,6 @@
   <h2 class="title">Are you sure you want to delete?</h2>
 </div>
 <div mat-dialog-actions class="dialog-actions">
-  <button class="cancelbutton" mat-button (click)="onCancel()">Cancel</button>
-  <button class="deletebutton" mat-button  (click)="onDelete()">Delete</button>
+  <button mat-button (click)="onCancel()" class="cancelbutton">Cancel</button>
+  <button mat-button (click)="onDelete()" class="deletebutton">Delete</button>
 </div>
-

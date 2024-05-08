@@ -7,22 +7,25 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./top-scorer.component.css']
 })
 export class TopScorerComponent {
-  tableData:any[]=[];
-  activeCategory: string | null = null;
-  activeButton: string | null = null;
+  tableData: any[] = [];
+  activeCategory: string  = 'all';
+ 
   constructor(private http: HttpClient) { }
  
   ngOnInit(): void {
-       this.fetchData('all');
+    this.fetchData(this.activeCategory);
   }
  
-  fetchData(category: string) {
-    this.activeCategory = category;
-    this.http.get<any>(`./assets/data.json`).subscribe(data => {
-     this.tableData = data[category];
-     
+  fetchData(category: string): void {
+    this.http.get<any>('./assets/data.json').subscribe(data => {
+      this.tableData = data[category] || [];
     });
-   
+  }
+ 
+  handleFilterChange(event: Event): void {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    this.activeCategory = selectedValue;
+    this.fetchData(this.activeCategory);
   }
 
 }

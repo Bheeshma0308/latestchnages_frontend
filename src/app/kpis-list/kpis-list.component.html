@@ -1,97 +1,93 @@
 <app-header [pageTitle]="'KPI'"></app-header>
   
 <user-details [role]="role"></user-details>
-    <div *ngIf="showAddSuccessMessage" class="success-message" >
-      <img class="right-symbol" src="assets\kpi right-symbol.png">
-      KPI added successfully!
-      <img class="wrong-symbol"src="assets\kpi wrong-symbol.png">
-    </div>
-    <div *ngIf="showDeleteSuccessMessage" class="success-message">
-      <img class="delete-symbol" src="assets\kpi delete-symbol.png">
-       Deleted successfully!
-      <img class="wrong-symbol"src="assets\kpi wrong-symbol.png">
-    </div>
-    <div *ngIf="showUpdateSuccessMessage" class="success-message">
-      <img class="right-symbol" src="assets\kpi right-symbol.png">
-      Updated successfully!
-      <img class="wrong-symbol"src="assets\kpi wrong-symbol.png">
-    </div>
+<div *ngIf="showAddSuccessMessage" class="success-message" >
+  <img class="right-symbol" src="assets\kpi right-symbol.png">
+  KPI added successfully!
+  <img class="wrong-symbol"src="assets\kpi wrong-symbol.png">
+</div>
+<div *ngIf="showDeleteSuccessMessage" class="success-message">
+  <img class="delete-symbol" src="assets\kpi delete-symbol.png">
+   Deleted successfully!
+  <img class="wrong-symbol"src="assets\kpi wrong-symbol.png">
+</div>
+<div *ngIf="showUpdateSuccessMessage" class="success-message">
+  <img class="right-symbol" src="assets\kpi right-symbol.png">
+  Updated successfully!
+  <img class="wrong-symbol"src="assets\kpi wrong-symbol.png">
+</div>
 
-
-   
-  <div class="kpi-page">
-    <div class="search-div">
-      <img class="arrow" src="assets\arrow.png" (click)="adminPage()"><span class="kpi-title">KPIs</span>
-      <img class="search-icon" src="assets\kpi-search.png">
-      <input class="search-bar" type="text" placeholder="Search KPI" [(ngModel)]="searchTerm" (keyup)="filterData()">
-     
-      
-      <button class="add-button" type="submit" (click)="openDialog()">Add KPI</button>
-    </div>
-  <div class="search-result">
-    <div *ngIf="showResultsMessage" class="results-message">
-      Results Found 
-    </div>
-    <div *ngIf="noResultsFound" class="no-results-message">
-      No Results Found 
-    </div>
-    <!-- <div class="search-suggestions" *ngIf="searchSuggestions.length > 0">
-      <div *ngFor="let suggestion of searchSuggestions" (click)="selectSuggestion(suggestion)">
-        {{ suggestion }}
+<div class="kpi-page">
+  <div class="search-div">
+    <img class="arrow" src="assets\arrow_back.svg" (click)="adminPage()"><span class="kpi-title">KPIs</span>
+     <!-- <img class="search-icon" src="assets\kpi-search.png">  -->
+    <input class="search-bar" type="text" placeholder="Search KPI" [(ngModel)]="searchTerm" (keyup)="filterData()">
+    <button class="add-button" type="submit" (click)="openDialog()">Add KPI</button>
+  </div>
+  <div *ngIf="!suggestionClicked">
+    <div class="search-result">
+      <div *ngIf="showResultsMessage" class="results-message">
+        Results Found
       </div>
-    </div> -->
+      <div *ngIf="noResultsFound" class="no-results-message">
+        No Results Found
+      </div>
+     <div class="search-suggestions" *ngIf="searchSuggestions.length > 0">
+      <div *ngFor="let suggestion of searchSuggestions" (click)="selectSuggestion(suggestion)">
+        <p class="suggestion-text">{{ suggestion }}</p>
+      </div>
+    </div>
 
   </div>
-  
+  </div>
 
-    <div class="tabdiv" *ngIf="tableData.length > 0">
-      <table class="tableData">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Actions</th>
+  <div class="tabdiv" *ngIf="tableData.length > 0">
+    <table class="tableData">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of filteredData; let i = index">
+          <tr >
+            <td >
+              <img class="kpi-image" src="assets\kpi-image.png">
+              <span *ngIf="!item.editing; else nameEditMode">{{ item.name }}</span>
+              <ng-template #nameEditMode>
+                <input class="edit-input-name" type="text" [(ngModel)]="item.name" />
+              </ng-template>
+            </td>
+            <td>
+              <span *ngIf="!item.editing; else descriptionEditMode">{{ item.description }}</span>
+              <ng-template #descriptionEditMode>
+                <input class="edit-input-description" type="text" [(ngModel)]="item.description" />
+              </ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="!item.editing; else saveMode">
+                <button class="edit-button" (click)="editItem(i)">Edit</button>
+                <button class="delete-button" (click)="openDeleteConfirmation(i)">Delete</button>
+              </ng-container>
+              <ng-template #saveMode>
+                <div class="edit-filter">
+                  <img class="edit-save"(click)="saveEdit(i)"src="assets\kpi-edit.png">
+                <button class="edit-cancel"(click)="cancelEdit(i)">Cancel</button>
+
+                </div>
+           
+               
+              </ng-template>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <ng-container *ngFor="let item of filteredData; let i = index">
-            <tr >
-              <td>
-                <img class="kpi-image" src="assets\kpi-image.png">
-                <span *ngIf="!item.editing; else nameEditMode">{{ item.name }}</span>
-                <ng-template #nameEditMode>
-                  <input class="edit-input-name" type="text" [(ngModel)]="item.name" />
-                </ng-template>
-              </td>
-              <td>
-                <span *ngIf="!item.editing; else descriptionEditMode">{{ item.description }}</span>
-                <ng-template #descriptionEditMode>
-                  <input class="edit-input-description" type="text" [(ngModel)]="item.description" />
-                </ng-template>
-              </td>
-              <td>
-                <ng-container *ngIf="!item.editing; else saveMode">
-                  <button class="edit-button" (click)="editItem(i)">Edit</button>
-                  <button class="delete-button" (click)="openDeleteConfirmation(i)">Delete</button>
-                </ng-container>
-                <ng-template #saveMode>
-                  <div class="edit-filter">
-                    <img class="edit-save"(click)="saveEdit(i)"src="assets\kpi-edit.png">
-                  <button class="edit-cancel"(click)="cancelEdit(i)">Cancel</button>
-
-                  </div>
-              
-                  
-                </ng-template>
-              </td>
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
-    </div>
-    
-    </div>
-    
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+  
  <app-footer></app-footer>
 
   

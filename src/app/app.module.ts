@@ -33,8 +33,13 @@ import { TopScorerComponent } from './top-scorer/top-scorer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatIconModule} from '@angular/material/icon';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { SuccessCriteriaCoeComponent } from './success-criteria-coe/success-criteria-coe.component';
+import { SuccessCriteriaComponent } from './success-criteria/success-criteria.component';
+import { TableDataComponent } from './table-data/table-data.component';
+
 
 @NgModule({
   declarations: [
@@ -61,6 +66,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     SelfReportPopUpComponent,
     EmployeeDashboardComponent,
     AdminDashboardComponent,
+    SuccessCriteriaCoeComponent,
+    SuccessCriteriaComponent,
+    TableDataComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -83,6 +92,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     MatSliderModule,
     MatIconModule,
     MatTableModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@
       <div class="user-detail">
         <p style="font-size:30px;">{{user_name}}</p>
         <p>{{user_level +' - '+ user_sub_competency}}</p>
+
       </div>
       <div class="action-container" *ngIf="role == 'Employee'">
         <button class="action-button" (click)="openPopUp()">+ Self Report</button>

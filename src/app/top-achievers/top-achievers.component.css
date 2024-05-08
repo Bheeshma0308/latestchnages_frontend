@@ -191,7 +191,6 @@
         color: #f8f8f8;
     }
 }
-
 ::ng-deep .ngx-pagination .pagination-previous,
 ::ng-deep .ngx-pagination .pagination-next{
     a{
