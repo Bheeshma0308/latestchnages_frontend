@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { KpiDialogComponent } from '../kpi-dialog/kpi-dialog.component';
 import { Router } from '@angular/router';
-import { KpiService } from '../kpi.service';
-import { Kpi } from '../kpi';
+import { KpiService } from '../services/kpi.service';
+import { Kpi } from '../Models/kpi.model';
 import { DeleteDailogComponent } from '../delete-dailog/delete-dailog.component';
 import { Location } from '@angular/common';
 
@@ -44,10 +44,9 @@ export class KpisListComponent {
   }
   
   loadData(): void {
-    this.KpiService.getData().subscribe(data => {
+    this.KpiService.getKPIListData().subscribe(data => {
       this.tableData = data;
       this.filterData();
-
     });
     
   }

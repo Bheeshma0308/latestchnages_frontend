@@ -3,7 +3,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { SelfReportPopUpComponent } from './self-report-pop-up/self-report-pop-up.component';
 import { Router } from '@angular/router';
 import { userdetails } from './userdetails';
-import { UserDetailsService } from '../user-details.service';
+import { UserDetailsService } from '../services/user-details.service';
  
 @Component({
   selector: 'user-details',
