@@ -70,7 +70,7 @@ label{
 }
  
 .form-control {
-    background-image: url('src\assets\expand_more.png');
+    background-image: url('src\assets\expand_more.svg');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 24px 24px;

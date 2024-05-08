@@ -18,13 +18,7 @@ export class SuccessCriteriaComponent implements OnInit {
   showNewRow: boolean = false;
   coe: string | undefined ;
   showDeleteSuccessMessage: boolean = false;
-  kpiOptions: string[] = [
-    "Interviews",
-    "White Papers",
-    "Tech Talks",
-    "RFPs",
-    "Case studies"
-  ];
+ 
 
   constructor(private http: HttpClient, public dialog: MatDialog,private router: Router, private route: ActivatedRoute) { }
 
@@ -46,39 +40,7 @@ export class SuccessCriteriaComponent implements OnInit {
   navigateCoe(){
     this.router.navigate(['success-COE']);
   }
-  addNewCriteria() {
-    this.showNewRow = true;
-    console.log('Add new criteria button clicked');
-  }
-
-  saveNewCriteria() {
-    console.log('Save new criteria button clicked');
-    const newData = {
-      Kpi: this.newKpi,
-      success: this.newSuccess,
-      weightage: this.newWeightage
-    };
-
-    this.tableData.push(newData);
-
-    localStorage.setItem('criteriaData', JSON.stringify(this.tableData));
-
-    console.log('New criteria added:', newData);
-
-    this.resetForm();
-  }
-
-  cancelAdd() {
-    this.resetForm();
-  }
-
-  resetForm() {
-    this.newKpi = '';
-    this.newSuccess = '';
-    this.newWeightage = '';
-    this.showNewRow = false;
-  }
-
+  
 
 openDeleteDialog(element: any): void {
   console.log('Delete dialog opened for element:', element);
