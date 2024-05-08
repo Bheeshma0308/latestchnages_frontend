@@ -11,7 +11,7 @@
     background: #ffffff;
     max-height: 638px; 
     overflow-y: auto;
-    top: calc(100% -120px);
+    top: calc(100% - 120px);
 }
 
 .heading {
