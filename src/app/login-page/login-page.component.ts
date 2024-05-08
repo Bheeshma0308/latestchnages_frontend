@@ -22,6 +22,8 @@ export class LoginPageComponent {
     const passwordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const passwordCheck = passwordPattern.test(this.loginData.password);
+ 
+    
     if (this.loginData.email === 'admin@innova.in' && this.loginData.password === 'Admin@123') {
       this.router.navigate(['admin-dashboard'], {state: {role: 'Admin'}});
     } else if(this.loginData.email==='employee@innova.in'&& this.loginData.password === 'Employee@123') {

@@ -17,7 +17,7 @@ interface Data {
 })
 export class TopAchieversComponent {
   @Input()
-  role: string;
+  role: string = '';
   
   domains = new FormControl([]);
   kpis = new FormControl([]);

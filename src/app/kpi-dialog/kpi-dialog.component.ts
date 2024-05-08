@@ -1,6 +1,6 @@
 import { Component,Inject,Input,OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Kpi } from '../kpi';
+import { Kpi } from '../Models/kpi.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
