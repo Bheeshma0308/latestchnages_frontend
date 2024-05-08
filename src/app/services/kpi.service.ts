@@ -22,13 +22,13 @@ export class KpiService {
       .pipe(
         catchError(error => {
           console.error('Error saving KPI data:', error);
-          return throwError(error); // Propagate error to caller
+          return throwError(error); 
         })
       );
   }
 
-  deleteKpi(id: string): Observable<void> {
-    const deleteUrl = `${this.apiUrl}/${id}`; // Construct the delete URL with item ID
+  deleteKpi(index: number): Observable<void> {
+    const deleteUrl = `${this.apiUrl}/${index}`; // Construct the delete URL with item ID
     return this.http.delete<void>(deleteUrl)
       .pipe(
         catchError(error => {

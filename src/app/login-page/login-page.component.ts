@@ -26,9 +26,11 @@ export class LoginPageComponent {
     
     if (this.loginData.email === 'admin@innova.in' && this.loginData.password === 'Admin@123') {
       this.router.navigate(['admin-dashboard'], {state: {role: 'Admin'}});
-    } else {
-      this.router.navigate(['employee-dashboard'], { state: { role: 'Employee' }});
-      // this.loginError = 'Invalid Username or Password.';
+    } else if(this.loginData.email==='employee@innova.in'&& this.loginData.password === 'Employee@123') {
+         this.router.navigate(['employee-dashboard'], {state: {role: 'Admin'}});
+       }
+       else{
+        this.loginError = 'Invalid Username or Password.';
+       }
     }   
   } 
-}
