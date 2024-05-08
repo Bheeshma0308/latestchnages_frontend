@@ -261,7 +261,18 @@
 
 ::ng-deep .ngx-pagination .pagination-previous,
 ::ng-deep .ngx-pagination .pagination-next{
-    a,span{
+    span{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        color: #f8f8f8;
+    }
+}
+ 
+::ng-deep .ngx-pagination .pagination-previous,
+::ng-deep .ngx-pagination .pagination-next{
+    a{
         width: 100%;
         height: 100%;
         border-radius: 50%;
