@@ -1,4 +1,4 @@
-<div class="login-container">
+<div class="login-container" >
    
   <div class="img-container">
       <img id="innova-logo" src="assets\innova-logo.png">
@@ -22,45 +22,6 @@
         </div>
         <button type="submit" (click)="onSubmit()">Login</button>
     </form>
-</div>
+  </div>
 
 </div>
-<!-- <div class="login-container">
-    <div class="img-container">
-        <img id="innova-logo" src="assets\innova-logo.png">
-        <img id="login-img" src="assets\login-img.png">
-       
-        <p class="title">EXCELLENCE QUEST</p>
-    </div>
-    <div class="form-container">
-        <h3 id="login-title">Login</h3>
-        <form class="form-details" #loginForm="ngForm">
-           
-          <div>
-            <label  for="loginEmail">Email address</label>
-            <input placeholder="Email address" type="email" id="loginEmail" name="loginEmail" [(ngModel)]="loginData.email" #loginEmail="ngModel"  required>
-              <div *ngIf="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)">
-              <div class="loginError" *ngIf="loginEmail.errors?.['required']">Email is required.</div>
-              <div class="loginError" *ngIf="loginEmail.errors?.['email']">Please enter a valid email address.</div>
-            </div>
-           
-          </div>
-          <div>
-            <label for="loginPassword">Password</label>
-            <input  placeholder="password" type="password" id="loginPassword" name="loginPassword" [(ngModel)]="loginData.password" required>
-           
-            <div *ngIf="loginError" class="error-message">{{ loginError }}
-             
-            </div>
-            <button type="submit" (click)="onSubmit()">Login</button>
- 
-          </div>
-         
-           
-         
-       
-         
-        </form>
- 
-    </div>
-  </div> -->

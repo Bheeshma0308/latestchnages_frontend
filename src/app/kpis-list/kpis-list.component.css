@@ -72,7 +72,7 @@
 }
 .search-result{
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 33%;
   border-radius:5px;
   width: 41%;
@@ -130,7 +130,7 @@ table{
 .tabdiv thead th{
   position:sticky;
   top:0px;
-  /* z-index: 1; */
+  z-index: 1; 
 }
 th{
    

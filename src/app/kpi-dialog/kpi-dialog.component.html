@@ -1,7 +1,4 @@
 
-<!-- <app-header [pageTitle]=" role.concat(' Dashboard')"></app-header>
-  
-<user-details [role]="role"></user-details> -->
 <h2 mat-dialog-title class="dialog-title">
   Add KPI <span class="error-icon">&#10005;</span>
 </h2>
@@ -18,9 +15,9 @@
    
 </div>
 <div mat-dialog-actions class="dialog-actions">
-  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onCancel()" class="cancel-button">Cancel</button>
   <button mat-button color="primary" (click)="onSave()" class="save-button">Save</button>
 </div>
-<app-footer></app-footer>
+
  
    
