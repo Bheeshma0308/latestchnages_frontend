@@ -9,6 +9,7 @@
     background: #ffffff;
     max-height: 538px; 
     overflow-y:auto;
+    top: calc(100% - 120px);
    
 }
 

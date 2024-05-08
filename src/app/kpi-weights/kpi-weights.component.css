@@ -1,33 +1,21 @@
-.container-1 {
-  position: fixed;
-  left: 60px;
-  top: calc(100vh - 310px); 
-  height: 235px; 
-  width: 450px; 
-  padding: 8px;
-  background-color: white;
-  border-radius: 5px;
-  gap: 10px;
-  overflow-y: auto; 
-}
-
-
 .heading {
   position: absolute;
-  top: 390px; 
-  width: auto;
-  height: auto;
-  margin-bottom: 10px;
   left: 60px;
+  top: 52%; 
+  width: auto;
+  margin-bottom: 10px;
 }
 
-h3 {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 19.36px;
-  text-align: left;
-  margin: 0;
+.container-1 {
+  position: absolute;
+  left: 60px;
+  top: 57%; 
+  width: 35%; 
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  overflow-y: auto; 
+  height: 270px; 
 }
 
 .progress-item {
@@ -37,22 +25,51 @@ h3 {
 }
 
 .progress-label {
-  width: 30%;
+  flex: 0 0 30%;
   margin-right: 10px;
 }
 
 .progress-indicator {
   display: flex;
   align-items: center;
-  width: calc(70% - 10px); 
+  flex: 1;
 }
 
 .progress-bar {
-  height: 20px; 
-  /* border-radius: 1px; */
-  background: linear-gradient(to right, #3E8ED2, #3E8ED2); 
+  height: 20px;
+  background: linear-gradient(to right, #3E8ED2, #3E8ED2);
 }
 
 .progress-indicator span {
-  margin-left: 10px; 
+  margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+.container-1 {
+    width: 15%; 
+  }
+}
+@media (max-width: 1440px) {
+  .container-1 {
+      width: 30%; 
+    }
+  }
+
+@media (max-width: 768px) {
+.container-1 {
+    width: 25%; 
+    height: 180px; 
+  }
+
+.progress-item {
+    flex-direction: column;
+  }
+
+.progress-label,.progress-indicator {
+    width: 100%;
+  }
+
+.progress-indicator {
+    flex-direction: row;
+  }
 }

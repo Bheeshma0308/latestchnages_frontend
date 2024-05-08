@@ -1,73 +1,63 @@
-<div class="admin-container">    
-    <div class="user-details-container">
-        <div class="user-detail">
-            <p style="font-size:30px;">{{ user_name }}</p>
-            <p>{{ user_level + ' - ' + user_sub_competency }}</p>
-        </div>
-        <div class="admin-button-container">
-            <button class="view-badges-button">View Badges</button>&nbsp;
-            <button class="view-kpis-button">View KPIs</button>&nbsp;
-            <button class="view-success-button">View Success Criteria</button>
-        </div>
-    </div>
-    <div class="table-label">
+<app-header></app-header>
+<user-details [role]="role"></user-details>
+<div class="table-label">
+    <div style="display: flex;">
         <img src="..\..\assets\arrow_back.svg" class="arrow-back-img" (click)="backHome()">
-        <p class="table-label-text">Top Achievers</p>
-        <div style="width:1000px;">
-        </div>
-        <div class="filter-container" align="right">
-            <p class="filter-label">Filters</p>
-            <mat-form-field class="custom-mat-form-field">
-                <mat-label>Domain</mat-label>
-                <mat-select [formControl]="domains" multiple>
-                    <mat-select-trigger>
-                        {{ domains.value?.[0] || '' }}
-                        <span *ngIf="(domains.value?.length || 0) > 1" class="example-additional-selection">
-                            (+{{ (domains.value?.length || 0) - 1 }} {{ domains.value?.length === 2 ? 'other' : 'others' }})
-                        </span>
-                    </mat-select-trigger>
-                    <mat-option *ngFor="let domain of domainList" [value]="domain">{{ domain }}</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>KPI</mat-label>
-                <mat-select [formControl]="kpis" multiple>
-                    <mat-select-trigger>
-                        {{ kpis.value?.[0] || '' }}
-                        <span *ngIf="(kpis.value?.length || 0) > 1" class="example-additional-selection">
-                            (+{{ (kpis.value?.length || 0) - 1 }} {{ kpis.value?.length === 2 ? 'other' : 'others' }})
-                        </span>
-                    </mat-select-trigger>
-                    <mat-option *ngFor="let kpi of kpiList" [value]="kpi">{{ kpi }}</mat-option>
-                </mat-select>
-            </mat-form-field>
+        <p class="table-label-text text">Top Achievers</p>
+    </div>
+    <div class="filter-container">
+        <p class="filter-label">Filters</p>
+        <mat-form-field class="custom-mat-form-field">
+            <mat-label>Domain</mat-label>
+            <mat-select [formControl]="domains" multiple>
+                <mat-select-trigger>
+                    {{ domains.value?.[0] || '' }}
+                    <span *ngIf="(domains.value?.length || 0) > 1" class="example-additional-selection">
+                        (+{{ (domains.value?.length || 0) - 1 }} {{ domains.value?.length === 2 ? 'other' : 'others' }})
+                    </span>
+                </mat-select-trigger>
+                <mat-option *ngFor="let domain of domainList" [value]="domain">{{ domain }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>KPI</mat-label>
+            <mat-select [formControl]="kpis" multiple>
+                <mat-select-trigger>
+                    {{ kpis.value?.[0] || '' }}
+                    <span *ngIf="(kpis.value?.length || 0) > 1" class="example-additional-selection">
+                        (+{{ (kpis.value?.length || 0) - 1 }} {{ kpis.value?.length === 2 ? 'other' : 'others' }})
+                    </span>
+                </mat-select-trigger>
+                <mat-option *ngFor="let kpi of kpiList" [value]="kpi">{{ kpi }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div style="margin-left: 24px;">
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource | paginate: { itemsPerPage: 8, currentPage: p }" class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef><strong>Name</strong></th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="score">
+                <th mat-header-cell *matHeaderCellDef><strong>Score</strong></th>
+                <td mat-cell *matCellDef="let element"><img mat-card-image src="assets/coin.svg" class="score-coin-img"> {{ element.score }}</td>
+            </ng-container>
+            <ng-container matColumnDef="sub_competency">
+                <th mat-header-cell *matHeaderCellDef><strong>Sub Competency</strong></th>
+                <td mat-cell *matCellDef="let element">{{ element.sub_competency }}</td>
+            </ng-container>
+            <ng-container matColumnDef="kpi">
+                <th mat-header-cell *matHeaderCellDef><strong>KPI</strong></th>
+                <td mat-cell *matCellDef="let element">{{ element.kpi }}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <div class="pagination-container" align="right">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
     </div>
-    <div style="margin-left: 24px;">
-        <div class="table-container">
-            <table mat-table [dataSource]="dataSource | paginate: { itemsPerPage: 8, currentPage: p }" class="mat-elevation-z8">
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef><strong>Name</strong></th>
-                    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-                </ng-container>
-                <ng-container matColumnDef="score">
-                    <th mat-header-cell *matHeaderCellDef><strong>Score</strong></th>
-                    <td mat-cell *matCellDef="let element"><img mat-card-image src="assets/coin.svg" class="score-coin-img"> {{ element.score }}</td>
-                </ng-container>
-                <ng-container matColumnDef="sub_competency">
-                    <th mat-header-cell *matHeaderCellDef><strong>Sub Competency</strong></th>
-                    <td mat-cell *matCellDef="let element">{{ element.sub_competency }}</td>
-                </ng-container>
-                <ng-container matColumnDef="kpi">
-                    <th mat-header-cell *matHeaderCellDef><strong>KPI</strong></th>
-                    <td mat-cell *matCellDef="let element">{{ element.kpi }}</td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-            <div class="pagination-container" align="right">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
-            </div>
-        </div>
-    </div>    
-</div>
+</div>    
+<app-footer></app-footer>   

@@ -3,93 +3,23 @@
     padding: 0px;
 }
 
-
-.user-details-container{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 111px;
-    margin-left: 24px;
-    margin-right: 24px;
-    border-radius: 5px;
-    background: linear-gradient(to right, #326D62, #0E5291, #0E034F);
-    height: 75px;
-}
-
-.user-detail{
-    margin: 10px;
-    margin-top: 7px;
-}
-
-.user-detail p{
-    margin: 10px;
-    color: white;
-}
-
-.admin-button-container{
-    margin: 30px;
-    margin-top: 20px;
-}
-
-.view-badges-button{
-    width: Hug(113px)px;
-    height: Hug(36px)px;
-    padding: 6px 16px 6px 16px;
-    background-color: #0155B8;
-    border-color: #0155B8;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
+.text{
     font-family: Roboto;
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    gap:4px;
-}
-
-.view-kpis-button{
-    width: Hug(95px)px;
-    height: Hug(36px)px;
-    padding: 6px 16px 6px 16px;
-    background-color: #0155B8;
-    border-color: #0155B8;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: center;
-    gap:4px;
-}
-
-.view-success-button{
-    width: Hug(169px)px;
-    height: Hug(36px)px;
-    padding: 6px 16px 6px 16px;
-    background-color: #0155B8;
-    border-color: #0155B8;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: center;
-    gap:4px;
 }
 
 .table-label{
     margin-top: 12px;
     margin-left: 24px;
     margin-right: 24px;
-    /* width: calc(100% - 48px); */
     height: 59px;
     background-color: white;
     border-radius: 5px 5px 0px 0px;
     display: flex;
+    justify-content: space-between;
 }
 
 .arrow-back-img{
@@ -104,7 +34,6 @@
     margin-top: 18px;
     height: 23px;
     width: 140px;
-    font-family: Roboto;
     font-size: 20px;
     font-weight: 600;
     line-height: 23.44px;
@@ -113,7 +42,6 @@
 }
 
 .table-container{
-    /* margin-left: 24px; */
     margin-right: 24px;
     background-color: white;
 }
@@ -154,7 +82,6 @@
 }
 
 .filter-container{
-    /* width: calc(100% - 154px); */
     padding-right: 30px;
     display: flex;
 }
@@ -326,15 +253,18 @@
 ::ng-deep .mat-cell::after {
     content: '' ;
     display: block;
-    margin-top: 20px; /* Adjust the vertical space from the content */
-    border-bottom: 1px solid #000; /* Border color and width for the line */
-    width: 50%; /* This determines the width of your line */
+    margin-top: 20px; 
+    border-bottom: 1px solid #000; 
+    width: 50%; 
     margin-left: auto;
     margin-right: auto;
-  }
+}
   
-  /* Remove the existing full-width border from cells */
-  ::ng-deep .mat-cell {
+::ng-deep .mat-cell {
     border-bottom: none !important;
-  }
+}
+
+::ng-deep .mdc-data-table__table{
+    min-width: 100% !important;
+}
 

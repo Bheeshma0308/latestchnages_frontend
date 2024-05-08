@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import adminKPI from '../adminKPI.json';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -16,6 +16,9 @@ interface Data {
   styleUrls: ['./top-achievers.component.css']
 })
 export class TopAchieversComponent {
+  @Input()
+  role: string;
+  
   domains = new FormControl([]);
   kpis = new FormControl([]);
 
@@ -38,7 +41,7 @@ export class TopAchieversComponent {
   }
 
   backHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['admin-dashboard']);
   }
 
   private filterData() {

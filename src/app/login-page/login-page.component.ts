@@ -22,22 +22,13 @@ export class LoginPageComponent {
     const passwordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const passwordCheck = passwordPattern.test(this.loginData.password);
- 
-    //  if (!emailCheck) {
-     
-    //   return;
-    //  }
- 
-    //  if (!passwordCheck) {
-    // //   alert('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
-    //   return;
-     
-    //  }
     if (this.loginData.email === 'admin@innova.in' && this.loginData.password === 'Admin@123') {
       this.router.navigate(['admin-dashboard'], {state: {role: 'Admin'}});
-    } else {
-      this.router.navigate(['employee-dashboard'], { state: { role: 'Employee' }});
-      // this.loginError = 'Invalid Username or Password.';
+    } else if(this.loginData.email==='employee@innova.in'&& this.loginData.password === 'Employee@123') {
+         this.router.navigate(['employee-dashboard'], {state: {role: 'Admin'}});
+       }
+       else{
+        this.loginError = 'Invalid Username or Password.';
+       }
     }   
   } 
-}
