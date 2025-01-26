@@ -1,0 +1,8 @@
+trigger:
+- feature/loginKPIscreen
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
