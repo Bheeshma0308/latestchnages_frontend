@@ -12,7 +12,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'ng build'
+    customCommand: 'npm run build'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
